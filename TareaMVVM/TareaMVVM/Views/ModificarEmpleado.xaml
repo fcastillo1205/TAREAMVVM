@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+              xmlns:vm="clr-namespace:TareaMVVM.ViewModels"
+             x:Class="TareaMVVM.Views.ModificarEmpleado"
+             Title="Empleados">
+
+    <ContentPage.BindingContext>
+        <vm:EmpleadosViewModels />
+    </ContentPage.BindingContext>
+
+    <ContentPage.Content>
+          <ScrollView>
+            <StackLayout Padding="20">                
+                <Label Text="ID" HorizontalOptions="FillAndExpand" TextColor="#202020"/>
+                <Entry HorizontalTextAlignment="Start" HeightRequest="50" Text="{Binding ID}" IsReadOnly="True" />
+                <Label Text="Nombre" HorizontalOptions="FillAndExpand" TextColor="#202020"/>
+                <Entry HorizontalTextAlignment="Start" HeightRequest="50" Text="{Binding Nombre}" ReturnType="Next" />
+                <Label Text="Apellido"  HorizontalOptions="FillAndExpand" TextColor="#202020"/>
+                <Entry HorizontalTextAlignment="Start" HeightRequest="50" Text="{Binding Apellido}"/>
+                <Label Text="Edad" HorizontalOptions="FillAndExpand" TextColor="#202020"/>
+                <Entry HorizontalTextAlignment="Start" HeightRequest="50" Keyboard="Telephone" Text="{Binding Edad}" />
+                <Label Text="Direccion" HorizontalOptions="FillAndExpand" TextColor="#202020"/>
+                <Entry HorizontalTextAlignment="Start" HeightRequest="50"  Text="{Binding Direccion}" MaxLength="13" />
+                <Label Text="puesto" HorizontalOptions="FillAndExpand" TextColor="#202020"/>
+                <Entry HorizontalTextAlignment="Start" HeightRequest="50" Text="{Binding Puesto}" MaxLength="13" />
+                <Button Margin="0,0,0,5" HeightRequest="50"  CornerRadius="20" Text="Modificar Empleado"  BackgroundColor="#202020" TextColor="White" Command="{Binding CommandUpdateEmple}"/>
+                <Button Margin="0,0,0,0" HeightRequest="50"  CornerRadius="20" Text="Borrar Empleado"  BackgroundColor="#202020" TextColor="White" Command="{Binding CommandDeleteEmple}" />
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

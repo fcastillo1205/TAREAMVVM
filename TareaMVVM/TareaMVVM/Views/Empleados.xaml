@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:TareaMVVM.ViewModels"
+             x:Class="TareaMVVM.Views.Empleados" Title="Nuevo Empleado">
+
+    <ContentPage.BindingContext>
+        <vm:EmpleadosViewModels />
+    </ContentPage.BindingContext>
+
+    
+    <ContentPage.Content>
+        <StackLayout Padding="20">
+            <Label Text="Nombre" HorizontalOptions="FillAndExpand" TextColor="#202020"></Label>
+            <Entry HorizontalTextAlignment="Start" HeightRequest="50" Text="{Binding Nombre}" ReturnType="Next" />
+            <Label Text="Apellido"  HorizontalOptions="FillAndExpand" TextColor="#202020"/>
+            <Entry HorizontalTextAlignment="Start" HeightRequest="50" Text="{Binding Apellido}"/>
+            <Label Text="Edad" HorizontalOptions="FillAndExpand" TextColor="#202020"></Label>
+            <Entry HorizontalTextAlignment="Start" HeightRequest="50" Keyboard="Telephone" Text="{Binding Edad}" />
+            <Label Text="Direccion" HorizontalOptions="FillAndExpand" TextColor="#202020"></Label>
+            <Entry HorizontalTextAlignment="Start" HeightRequest="50"  Text="{Binding Direccion}" />
+            <Label Text="puesto" HorizontalOptions="FillAndExpand" TextColor="#202020"></Label>
+            <Entry HorizontalTextAlignment="Start" HeightRequest="50" Text="{Binding Puesto}" />
+            <Button Margin="0,30,0,20" HeightRequest="50"  CornerRadius="20" Text="Guardar"  BackgroundColor="#202020" TextColor="White" Command="{Binding CommandSaveEmple}"/>
+            <Button Margin="0,0,0,0" HeightRequest="50"  CornerRadius="20" Text="Ver Registro"  BackgroundColor="#202020" TextColor="White" Command="{Binding CommandListEmple}" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
